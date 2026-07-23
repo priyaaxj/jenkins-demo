@@ -4,13 +4,23 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Build Successful'
+                echo 'Building...'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Test Successful'
+                echo 'Testing...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                mkdir -p deploy
+                cp index.html deploy/
+                '''
+                echo 'Application deployed'
             }
         }
     }
