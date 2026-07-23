@@ -2,25 +2,29 @@ pipeline {
     agent any
 
     stages {
+
+        stage('Workspace Check') {
+            steps {
+                sh 'pwd'
+                sh 'ls -la'
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Building...'
+                echo 'Build Started'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Testing...'
+                echo 'Test Started'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh '''
-                mkdir -p deploy
-                cp index.html deploy/
-                '''
-                echo 'Application deployed'
+                echo 'Deploy Started'
             }
         }
     }
