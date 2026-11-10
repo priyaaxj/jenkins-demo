@@ -1,5 +1,5 @@
 print("Hello Jenkins")
-print("updated")
+print("updted")
 print("!!@")
 print("up")
 print("down")
