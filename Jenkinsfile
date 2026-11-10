@@ -3,28 +3,21 @@ pipeline {
 
     stages {
 
-        stage('Workspace Check') {
-            steps {
-                sh 'pwd'
-                sh 'ls -la'
-            }
-        }
-
         stage('Build') {
             steps {
-                echo 'Build Started'
+                sh 'echo Building Application'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Test Started'
+                sh 'python3 app.py'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploy Started'
+                sh 'echo Deployment Successful'
             }
         }
     }
