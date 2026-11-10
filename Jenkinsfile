@@ -15,14 +15,11 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
-            steps {
-                sh 'docker build -t jenkins-demo .'
-            }
-        }
-
         stage('Deploy') {
             steps {
+                sh 'mkdir -p deployment'
+                sh 'cp app.py deployment/'
+                sh 'ls deployment'
                 sh 'echo Deployment Successful'
             }
         }
