@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                git 'https://github.com/priyaaxj/jenkins-demo.git'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'echo Build Successful'
